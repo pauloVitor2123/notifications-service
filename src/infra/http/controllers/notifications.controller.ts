@@ -1,4 +1,4 @@
-import { SendNotification } from 'src/application/use-cases/send-notifications';
+import { SendNotification } from '@application/use-cases/send-notifications';
 import { CreateNotificationBody } from '../dtos/create-notification-body';
 import { Body, Controller, Post } from '@nestjs/common';
 
