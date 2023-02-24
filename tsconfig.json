@@ -17,6 +17,7 @@
     "strictPropertyInitialization": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
+    "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
@@ -24,7 +25,7 @@
       "@helpers/*": ["./src/helpers/*"],
       "@infra/*": ["./src/infra/*"],
       "@test/*": ["./test/*"],
-      "@repositories/*": ["./src/repositories/*"]
+      "@repositories/*": ["src/application/repositories/*"]
     }
   }
 }

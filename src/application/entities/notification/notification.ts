@@ -7,6 +7,7 @@ export interface INotificationProps {
   content: Content;
   category: string;
   readAt?: Date | null;
+  canceledAt?: Date | null;
   createdAt: Date;
 }
 
@@ -14,7 +15,7 @@ export class Notification {
   private _id: string;
   private props: INotificationProps;
 
-  constructor(props: Replace<INotificationProps, { createdAt?: Date }>) {
+  constructor(props: Replace<INotificationProps, { createdAt?: Date, canceledAt?: Date }>) {
     this._id = randomUUID();
     const createdAt = props.createdAt ?? new Date();
     this.props = { ...props, createdAt };
@@ -53,6 +54,14 @@ export class Notification {
 
   public get readAt(): INotificationProps['readAt'] {
     return this.props.readAt;
+  }
+
+  public get canceledAt(): INotificationProps['canceledAt'] {
+    return this.props.canceledAt;
+  }
+
+  public cancel() {
+    this.props.canceledAt = new Date();
   }
 
   public set createdAt(createdAt: Date) {
