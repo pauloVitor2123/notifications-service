@@ -1,8 +1,5 @@
 import { randomUUID } from 'crypto';
-import { CancelNotification } from './cancel-notifications';
 import { InMemoryNotificationsRepository } from '@test/repositories/in-memory-notifications-repository';
-import { Notification } from '@application/entities/notification/notification';
-import { Content } from '@application/entities/content/content';
 import { makeNotification } from '@test/factories/notification-factory';
 
 describe('Count recipients notification', () => {

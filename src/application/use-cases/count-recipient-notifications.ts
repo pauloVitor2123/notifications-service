@@ -5,7 +5,7 @@ interface ICountRecipientNotificationRequest {
   recipientId: String;
 }
 
-type CountRecipientNotificationResponse = {
+type TCountRecipientNotificationResponse = {
   count: number
 };
 @Injectable()
@@ -14,7 +14,7 @@ export class CountRecipientNotification {
 
   async execute(
     request: ICountRecipientNotificationRequest,
-  ): Promise<CountRecipientNotificationResponse> {
+  ): Promise<TCountRecipientNotificationResponse> {
     const { recipientId } = request;
 
     const count = await this.notificationsRepository.countByRecipientId(recipientId);

@@ -6,14 +6,14 @@ interface ICancelNotificationRequest {
   notificationId: String;
 }
 
-type CancelNotificationResponse = void;
+type TCancelNotificationResponse = void;
 @Injectable()
 export class CancelNotification {
   constructor(private notificationsRepository: NotificationsRepository) {}
 
   async execute(
     request: ICancelNotificationRequest,
-  ): Promise<CancelNotificationResponse> {
+  ): Promise<TCancelNotificationResponse> {
     const { notificationId } = request;
 
     const notification = await this.notificationsRepository.findById(notificationId);
