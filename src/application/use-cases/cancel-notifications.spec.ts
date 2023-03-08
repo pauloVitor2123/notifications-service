@@ -1,4 +1,3 @@
-import { NotificationsRepository } from '@application/repositories/notifications-repository';
 import { randomUUID } from 'crypto';
 import { CancelNotification } from './cancel-notifications';
 import { InMemoryNotificationsRepository } from '@test/repositories/in-memory-notifications-repository';

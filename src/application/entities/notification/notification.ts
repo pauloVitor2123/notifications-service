@@ -6,8 +6,8 @@ export interface INotificationProps {
   recipientId: string;
   content: Content;
   category: string;
-  readAt?: Date | null;
-  canceledAt?: Date | null;
+  readAt?: Date;
+  canceledAt?: Date;
   createdAt: Date;
 }
 
