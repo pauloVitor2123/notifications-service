@@ -6,7 +6,7 @@ export interface INotificationProps {
   recipientId: string;
   content: Content;
   category: string;
-  readAt?: Date;
+  readAt?: Date | null;
   canceledAt?: Date;
   createdAt: Date;
 }
@@ -48,9 +48,16 @@ export class Notification {
     return this.props.category;
   }
 
-  public set readAt(readAt: INotificationProps['readAt']) {
-    this.props.readAt = readAt;
+  public read() {
+    this.props.readAt = new Date();
   }
+
+  public unread() {
+    this.props.readAt = null;
+  }
+  // public set readAt(readAt: INotificationProps['readAt']) {
+  //   this.props.readAt = readAt;
+  // }
 
   public get readAt(): INotificationProps['readAt'] {
     return this.props.readAt;
